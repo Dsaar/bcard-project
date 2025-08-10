@@ -27,7 +27,6 @@ import { getToken } from '../../users/services/localStorageService';
 import { useSnack } from '../../../app/providers/SnackBarProvider';
 import { useCurrentUser } from '../../../app/providers/UserProvider';
 
-// Components
 import InfoRow from '../../../shared/components/common/InfoRow';
 import DeleteConfirmationDialog from '../../../shared/components/common/DeleteConfirmationDialog';
 
@@ -92,7 +91,6 @@ function CardDetailsPage() {
 	return (
 		<Box sx={{ p: 3, minHeight: '100vh', display: 'flex', justifyContent: 'center' }}>
 			<Paper elevation={4} sx={{ p: 4, borderRadius: 3, maxWidth: '900px', width: '100%' }}>
-				{/* Header Buttons */}
 				<Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
 					<Button variant="outlined" startIcon={<ArrowBackIcon />} onClick={() => navigate('/')}>
 						Back to Cards
@@ -120,7 +118,6 @@ function CardDetailsPage() {
 					)}
 				</Box>
 
-				{/* Title */}
 				<Typography variant="h4" align="center" gutterBottom>
 					{card.title}
 				</Typography>
@@ -129,7 +126,6 @@ function CardDetailsPage() {
 				</Typography>
 				<Divider sx={{ my: 3 }} />
 
-				{/* Card Image on Top */}
 				<Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
 					<Box
 						component="img"
@@ -145,9 +141,7 @@ function CardDetailsPage() {
 					/>
 				</Box>
 
-				{/* Details Layout */}
 				<Grid container spacing={4}>
-					{/* Contact Info */}
 					<Grid item xs={12} md={6}>
 						<Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
 							Contact Information
@@ -157,7 +151,6 @@ function CardDetailsPage() {
 						<InfoRow icon={<LanguageIcon />} label="Website" value={card.web} fullWidth />
 					</Grid>
 
-					{/* Address Info */}
 					<Grid item xs={12} md={6}>
 						<Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
 							Address
@@ -168,7 +161,6 @@ function CardDetailsPage() {
 						<InfoRow icon={<BusinessIcon />} label="Zip Code" value={card.address?.zip} fullWidth />
 					</Grid>
 
-					{/* Business Info */}
 					<Grid item xs={12}>
 						<Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
 							Business Details
@@ -190,7 +182,6 @@ function CardDetailsPage() {
 				</Grid>
 			</Paper>
 
-			{/* Delete Confirmation Dialog */}
 			<DeleteConfirmationDialog
 				open={deleteDialogOpen}
 				onClose={() => setDeleteDialogOpen(false)}
@@ -199,5 +190,4 @@ function CardDetailsPage() {
 		</Box>
 	);
 }
-
 export default CardDetailsPage;
