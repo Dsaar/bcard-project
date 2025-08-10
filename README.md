@@ -9,14 +9,9 @@ The platform includes dedicated features for regular users, business users, and 
 ## Project Contents 
 ```
 src/
-├── api/ # API endpoint definitions
-├── cards/ # Components, pages, and services for managing cards
-├── components/ # Reusable UI components (buttons, headers, etc.)
-├── layout/ # Header, footer, and main layout components
-├── pages/ # Page-level components (Home, About, My Cards, etc.)
-├── providers/ # Context providers (User, Snackbar, etc.)
-├── users/ # Authentication, user profile, and services
-└── hooks/ # Custom React hooks
+├── app/         # App entry point, layout, router, and global providers
+├── shared/      # Reusable UI components, hooks, API clients, and utilities
+├── features/    # Feature-based modules (cards, users, auth, about, errors)
 ---
 ```
 
