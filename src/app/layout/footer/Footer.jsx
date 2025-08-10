@@ -56,13 +56,14 @@ function Footer() {
           icon={<InfoIcon />}
           onClick={() => navigate(ROUTES.about)}
         />
-        {user && (
+        {(user?.isBusiness || user?.isAdmin) && (
           <BottomNavigationAction
             label="My Cards"
             icon={<RecentActorsIcon />}
             onClick={() => navigate(ROUTES.myCards)}
           />
         )}
+
         {user && (
           <BottomNavigationAction
             label="Favorites"

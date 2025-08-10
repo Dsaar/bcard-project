@@ -28,12 +28,12 @@ function CardsPage() {
       );
       setCards(response.data);
       setFilteredCards(response.data);
-      setSnack('success', "All cards imported successfully"); 
+      setSnack('success', "All cards imported successfully");
     } catch (error) {
       console.error("Failed to fetch cards:", error);
       setSnack('error', "Failed to load cards");
     } finally {
-      setIsLoading(false); 
+      setIsLoading(false);
     }
   };
 
@@ -70,7 +70,7 @@ function CardsPage() {
         )
       );
 
-    
+
       if (updatedCard.likes.includes(user._id)) {
         setSnack("success", "Card liked successfully!");
       } else {
@@ -82,7 +82,7 @@ function CardsPage() {
       setSnack("error", "Failed to like card");
     }
   }, [user, setSnack]);
-  
+
   return (
     <Container sx={{ paddingBottom: 10 }}>
       <PageHeader
@@ -98,7 +98,9 @@ function CardsPage() {
         loading={isLoading}
 
       />
-      {user && <AddNewItemButton to={ROUTES.createCard} text="Create" />}
+      {(user?.isBusiness || user?.isAdmin) && (
+        <AddNewItemButton to={ROUTES.createCard} text="Create" />
+      )}
     </Container>
   );
 
